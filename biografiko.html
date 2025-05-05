@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Το Βιογραφικό Μου</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      color: #333;
+    }
+
+    form {
+      margin-top: 30px;
+      background-color: #f2f2f2;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .message {
+      margin-top: 15px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>PANAGIOTIS LAMBIS</h1>
+  <p>Μεταπτυχιακό στο τμήμα πληροφορικής του ΑΠΘ
+    Εργασία στον τομέα προγραμματισμολυ στην εταιρεία PCHELLAS Α.Ε
+  </p>
+
+  <h2>Επικοινωνία</h2>
+  <form id="contactForm">
+    <label for="name">Όνομα</label>
+    <input type="text" id="name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" required>
+
+    <label for="message">Μήνυμα</label>
+    <textarea id="message" rows="5" required></textarea>
+
+    <button type="submit">Αποστολή</button>
+    <div class="message" id="formMessage"></div>
+  </form>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+     
+      formMessage.textContent = "Το μήνυμά σας στάλθηκε με επιτυχία";
+
+      // Καθαρίζουμε τη φόρμα
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
